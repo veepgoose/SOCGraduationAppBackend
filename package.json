@@ -2,11 +2,11 @@
   "name": "socgraduationappbackend",
   "version": "1.0.0",
   "description": "",
-  "main": "database/dbLink.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon database/dbLink.js"
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,9 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.0.0",
+    "prisma": "^5.0.0"
   }
 }

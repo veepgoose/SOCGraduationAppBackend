@@ -1,24 +1,7 @@
-import { connection } from '../database/dbLink.js';
-export const createAttendee = async (name, email, staying_monday, hackathon_interest, staying_tuesday, going_out_interest) => {
-        try {
-            const { data, error } = await connection.from('attendees').insert({
-              name,
-              email,
-              staying_monday,
-              hackathon_interest,
-              staying_tuesday,
-              going_out_interest,
-            });
-        
-            if (error) {
-              console.error('Error creating attendee:', error);
-              throw error;
-            }
-        
-            console.log('Attendee created:', data);
-            return data;
-          } catch (error) {
-            console.error('Error:', error.message);
-            throw error;
-        }
-};
+import pool from "../database/dbLink.js";
+
+export async function insertAttendee(name, email, staying_monday, hackathon, staying_tuesday, going_out_interest, beer, wine, spirits, beast_mode) {
+  await pool.query('INSERT INTO attendees (name, email, staying_monday, hackathon, staying_tuesday, going_out_interest, beer, wine, spirits, beast_mode) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [name, email, staying_monday, hackathon, staying_tuesday, going_out_interest, beer, wine, spirits, beast_mode]);
+}
+
+// create a get function for the attendees

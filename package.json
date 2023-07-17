@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon -r dotenv/config app.js"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,8 @@
     "@supabase/supabase-js": "^2.26.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.1"
   },
   "devDependencies": {
     "@prisma/client": "^5.0.0",
